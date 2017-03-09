@@ -19,21 +19,30 @@ public class DataAccessTest {
     @Mock
     DataWriter writer;
 
+    @Mock
+    DataReader reader;
+
     @InjectMocks
     DataAccess dataAccess;
 
     @Test
     public void deveria_escrever_string_no_arquivo() {
-        DataAccess dataAccess = new DataAccess(writer);
+        DataAccess dataAccess = new DataAccess(writer, reader);
         dataAccess.println("message");
         doNothing().when(writer).println("message");
         verify(writer).println("message");
     }
 
     @Test
-    public void deveria_fechar_arquivo(){
+    public void deveria_fechar_arquivo() {
         dataAccess.close();
         verify(writer).close();
+    }
+
+    @Test
+    public void deveria_retornar_com_o_reader_se_existe_proximo_valor_a_ser_lido(){
+        dataAccess.hasNext();
+        verify(reader).hasNext();
     }
 
 }

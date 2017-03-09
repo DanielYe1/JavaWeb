@@ -8,9 +8,11 @@ import java.io.*;
 public class DataAccess {
 
     private DataWriter writer;
+    private DataReader reader;
 
-    public DataAccess(DataWriter writer) {
+    public DataAccess(DataWriter writer, DataReader reader) {
         this.writer = writer;
+        this.reader = reader;
     }
 
     public void println(String message) {
@@ -19,5 +21,13 @@ public class DataAccess {
 
     public void close(){
         writer.close();
+    }
+
+    public String readln(){
+        return reader.readln();
+    }
+
+    public boolean hasNext(){
+        return reader.hasNext();
     }
 }

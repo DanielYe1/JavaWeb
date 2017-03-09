@@ -18,4 +18,12 @@ public class DataReaderTest {
         assertThat(line,equalTo("nome:teste - email:1r1r - mensagem:241"));
     }
 
+    @Test
+    public void deveria_retornar_se_possui_ou_nao_proximo_valor(){
+        DataReader dataReader = new DataReader("temp/oneValue.txt");
+        assertThat(dataReader.hasNext(),equalTo(true));
+        String line = dataReader.readln();
+        assertThat(dataReader.hasNext(),equalTo(false));
+    }
+
 }

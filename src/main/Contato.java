@@ -1,6 +1,7 @@
 package main;
 
 import main.Controller.DataAccess;
+import main.Controller.DataReader;
 import main.Controller.DataWriter;
 import main.Controller.PrintWriterFactory;
 
@@ -21,23 +22,30 @@ import java.util.Scanner;
 public class Contato extends HttpServlet {
 
 
+    @Override
+    public void init() throws ServletException {
+        super.init();
+
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriterFactory factory = new PrintWriterFactory();
-        DataAccess dataAccess = new DataAccess(new DataWriter(factory.createWriter("/opt/development/workspaces/Catalogo/temp/contatos.txt")));
+        String fileName = "/opt/development/workspaces/Catalogo/temp/contatos.txt";
+        DataAccess dataAccess = new DataAccess(new DataWriter(factory.createWriter(fileName)), new DataReader(fileName));
         String contactData = String.format("nome:%s - email:%s - mensagem:%s", request.getParameter("nome"), request.getParameter("email"), request.getParameter("mensagem"));
         dataAccess.println(contactData);
         dataAccess.close();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Scanner scanner = new Scanner(new FileReader("/opt/development/workspaces/Catalogo/temp/contatos.txt"));
+        PrintWriterFactory factory = new PrintWriterFactory();
+        String fileName = "/opt/development/workspaces/Catalogo/temp/contatos.txt";
+        DataAccess dataAccess = new DataAccess(new DataWriter(factory.createWriter(fileName)), new DataReader(fileName));
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-
-        while(scanner.hasNext()){
-            out.println(scanner.nextLine());
+        while (dataAccess.hasNext()) {
+            out.println(dataAccess.readln());
             out.println("</br>");
         }
     }

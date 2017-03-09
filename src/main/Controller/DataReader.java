@@ -22,4 +22,8 @@ public class DataReader {
     public String readln() {
         return scanner.nextLine();
     }
+
+    public boolean hasNext(){
+        return scanner.hasNext();
+    }
 }
