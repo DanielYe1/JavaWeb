@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-@WebServlet("/cadastroinstrutor")
+@WebServlet("/cadastro/matricula")
 public class CadastroMatricula extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -38,14 +39,13 @@ public class CadastroMatricula extends HttpServlet {
             PreparedStatement stmt = conexao.prepareStatement("insert into matriculas(turmas_id, alunos_id, data_matricula, nota) values(?,?,?,?)");
             stmt.setInt(1, Integer.parseInt(request.getParameter("turmas_id")));
             stmt.setInt(2, Integer.parseInt(request.getParameter("alunos_id")));
-            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            stmt.setDate(3, (java.sql.Date)formatter.parse(request.getParameter("data_matricula")));
+            stmt.setDate(3, Date.valueOf(request.getParameter("data_matricula")));
             stmt.setInt(4, Integer.parseInt(request.getParameter("nota")));
 
             int i = stmt.executeUpdate();
 
             System.out.println("salvei "+i);
-            out.println("O Curso " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            out.println("A Matricula " + request.getParameter("nome") + " foi cadastrado com sucesso.");
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

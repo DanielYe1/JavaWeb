@@ -7,10 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61604746-e299-4c97-95a8-462a5898f8eb" name="Default" comment="'''''''">
-      <change afterPath="$PROJECT_DIR$/src/main/controller/CadastroCurso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/controller/CadastroMatricula.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/controller/CadastroTurma.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/CadastroAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/CadastroAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/CadastroCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/CadastroCurso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controller/CadastroMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controller/CadastroMatricula.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,7 +59,7 @@
         <item name="escola@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="escola: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="matriculas: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="turmas: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -77,15 +79,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/model/Instrutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/model/Turma.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -100,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroAluno.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+            <state relative-caret-position="121">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="60">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -121,17 +114,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroCurso.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="35" column="145" lean-forward="true" selection-start-line="35" selection-start-column="145" selection-end-line="35" selection-end-column="145" />
+            <state relative-caret-position="-30">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroMatricula.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroMatricula.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroTurma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="300">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
@@ -216,10 +218,12 @@
         <option value="$PROJECT_DIR$/src/main/model/Matricula.java" />
         <option value="$PROJECT_DIR$/src/main/model/Turma.java" />
         <option value="$PROJECT_DIR$/src/main/model/repositorio/Conexao.java" />
-        <option value="$PROJECT_DIR$/src/main/controller/CadastroAluno.java" />
+        <option value="$PROJECT_DIR$/src/main/controller/AtualizaAluno.java" />
         <option value="$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java" />
+        <option value="$PROJECT_DIR$/src/main/controller/CadastroAluno.java" />
         <option value="$PROJECT_DIR$/src/main/controller/CadastroCurso.java" />
         <option value="$PROJECT_DIR$/src/main/controller/CadastroMatricula.java" />
+        <option value="$PROJECT_DIR$/src/main/controller/CadastroTurma.java" />
       </list>
     </option>
   </component>
@@ -230,7 +234,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="35" />
     <option name="y" value="25" />
     <option name="width" value="1331" />
@@ -308,7 +312,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/reflect/Constructor.class&#10;constru&#9;PSI&#9;JAVA://java.lang.reflect.Constructor" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581047946118" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581050811590" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
@@ -732,7 +736,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38303000" />
+    <option name="totallyTimeSpent" value="40065000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,7 +751,7 @@
     <frame x="35" y="25" width="1331" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48341233" visible="true" weight="0.18910506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48341233" visible="true" weight="0.07237354" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -760,7 +764,7 @@
       <window_info anchor="bottom" id="Database Console" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32985386" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32410422" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32247558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -780,7 +784,7 @@
       <window_info anchor="right" id="Properties" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="right" id="Database" order="7" visible="true" weight="0.22723736" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.35642022" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Dynamic Properties" order="10" />
@@ -813,9 +817,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/ContatoTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/Controller/WriterTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/test/WriterTest.java" />
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1086,17 +1087,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://4f27550a-917a-4c89-8ca6-5702df8ed10c/schema/escola/table/instrutores">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controller/AtualizaAluno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroAluno.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+        <state relative-caret-position="121">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://4f27550a-917a-4c89-8ca6-5702df8ed10c/schema/escola/table/instrutores">
+    <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4f27550a-917a-4c89-8ca6-5702df8ed10c/schema/escola/table/cursos">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1105,22 +1127,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroCurso.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="35" column="145" lean-forward="true" selection-start-line="35" selection-start-column="145" selection-end-line="35" selection-end-column="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroInstrutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="-30">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroMatricula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controller/CadastroTurma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>

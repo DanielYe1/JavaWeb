@@ -10,13 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/cadastro/curso")
-public class CadastroCurso extends HttpServlet {
+@WebServlet("/cadastro/turma")
+public class CadastroTurma extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public CadastroCurso() {
+    public CadastroTurma() {
         super();
     }
 
@@ -33,12 +34,12 @@ public class CadastroCurso extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("insert into cursos(nome, requisito, ementa, carga_horaria, preco) values(?,?,?,?,?)");
-            stmt.setString(1, request.getParameter("nome"));
-            stmt.setString(2, request.getParameter("requisito"));
-            stmt.setString(3, request.getParameter("ementa"));
-            stmt.setInt(4, Integer.parseInt(request.getParameter("carga_horaria")));
-            stmt.setFloat(5, Float.parseFloat(request.getParameter("preco")));
+            PreparedStatement stmt = conexao.prepareStatement("insert into turmas(instrutores_id, cursos_id, data_inicio, data_final, carga_horaria) values(?,?,?,?,?)");
+            stmt.setInt(1, Integer.parseInt(request.getParameter("instrutores_id")));
+            stmt.setInt(2, Integer.parseInt(request.getParameter("cursos_id")));
+            stmt.setDate(3, Date.valueOf(request.getParameter("data_matricula")));
+            stmt.setDate(4, Date.valueOf(request.getParameter("data_final")));
+            stmt.setInt(5, Integer.parseInt(request.getParameter("carga_horaria")));
 
             int i = stmt.executeUpdate();
 
