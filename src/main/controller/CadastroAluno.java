@@ -1,6 +1,6 @@
 package main.controller;
 
-import main.model.Aluno;
+import main.model.repositorio.Conexao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,8 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
-@WebServlet("/admin/cadAluno")
+@WebServlet("/teste")
 public class CadastroAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -19,38 +22,38 @@ public class CadastroAluno extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("cadAluno.jsp").forward(request, response);
+        PrintWriter out = response.getWriter();
+        out.println("get teste");
     }
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
         try {
 
-            Aluno aluno = new Aluno(
-                    request.getParameter("cpf"),
-                    request.getParameter("nome"),
-                    request.getParameter("email"),
-                    request.getParameter("celular"),
-                    request.getParameter("login"),
-                    request.getParameter("senha"),
-                    request.getParameter("endereco"),
-                    request.getParameter("cidade"),
-                    request.getParameter("bairro"),
-                    request.getParameter("cep"),
-                    request.getParameter("comentario"),
-                    request.getParameter("aprovado").charAt(0)
-            );
+            Connection conexao = Conexao.getConexao();
 
+            PreparedStatement stmt = conexao.prepareStatement("insert into alunos values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            stmt.setString(1, request.getParameter("cpf"));
+            stmt.setString(2, request.getParameter("nome"));
+            stmt.setString(3, request.getParameter("email"));
+            stmt.setString(4, request.getParameter("celular"));
+            stmt.setString(5, request.getParameter("login"));
+            stmt.setString(6, request.getParameter("senha"));
+            stmt.setString(7, request.getParameter("endereco"));
+            stmt.setString(8, request.getParameter("cidade"));
+            stmt.setString(9, request.getParameter("bairro"));
+            stmt.setString(10, request.getParameter("cep"));
+            stmt.setString(11, request.getParameter("comentario"));
+            stmt.setString(12, request.getParameter("aprovado"));
 
+            int i = stmt.executeUpdate();
 
-            request.setAttribute("mensagem", "O Aluno " + aluno.getNome()
-                    + " foi cadastrado com sucesso.");
-            request.getRequestDispatcher("cadAluno.jsp").forward(request,
-                    response);
+            System.out.println("salvei "+i);
+            out.println("O Aluno " + request.getParameter("nome") + " foi cadastrado com sucesso.");
         } catch (Exception e) {
-            request.setAttribute("mensagem", "Erro: " + e.getMessage());
-            request.getRequestDispatcher("cadAluno.jsp").forward(request,
-                    response);
+
+            out.println("Erro: " + e.getMessage());
         }
     }
 }
