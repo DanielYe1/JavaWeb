@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-@WebServlet("/teste")
+@WebServlet("/cadastroaluno")
 public class CadastroAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
