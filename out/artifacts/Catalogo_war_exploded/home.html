@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Bootstrap</title>
 </head>
 <body>
-<form action="contato" method="post">
-    Nome: <input type="text" name="nome"/><br/>
-    E-mail: <input type="text" name="email"/><br/>
-    Mensagem: <input type="text" name="mensagem"/><br/>
-    <input type="submit" value="Gravar"/>
-</form>
+<div id="menu"></div>
+<div id="corpo-home"></div>
+<div id="rodape"></div>
 
-<form action="contato" method="get">
-    <input type="submit" value="Mostrar Contatos">
-</form>
-
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function() {
+        $("#menu").load("paginas/menu.html");
+        $("#corpo-home").load("paginas/corpo-home.html");
+        $("#rodape").load("paginas/rodape.html");
+    });
+</script>
 </body>
 </html>

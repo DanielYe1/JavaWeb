@@ -3,4 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <servlet>
+        <servlet-name>pag1</servlet-name>
+        <jsp-file>/index.html</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>pag2</servlet-name>
+        <jsp-file>/login.html</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>pag3</servlet-name>
+        <jsp-file>/professores.html</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>pag4</servlet-name>
+        <jsp-file>/registro.html</jsp-file>
+    </servlet>
 </web-app>
+

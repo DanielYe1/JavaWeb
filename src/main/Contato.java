@@ -1,19 +1,17 @@
 package main;
 
-import main.Controller.DataAccess;
-import main.Controller.DataReader;
-import main.Controller.DataWriter;
-import main.Controller.PrintWriterFactory;
+import main.controller.DataAccess;
+import main.controller.DataReader;
+import main.controller.DataWriter;
+import main.controller.PrintWriterFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 /**
  * Created by daniel.ye on 08/03/17.
@@ -30,7 +28,7 @@ public class Contato extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriterFactory factory = new PrintWriterFactory();
-        String fileName = "/opt/development/workspaces/Catalogo/temp/contatos.txt";
+        String fileName = "/home/daniel/development/repos/JavaWeb/src/main/contatos.txt";
         DataAccess dataAccess = new DataAccess(new DataWriter(factory.createWriter(fileName)), new DataReader(fileName));
         String contactData = String.format("nome:%s - email:%s - mensagem:%s", request.getParameter("nome"), request.getParameter("email"), request.getParameter("mensagem"));
         dataAccess.println(contactData);
@@ -39,7 +37,7 @@ public class Contato extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriterFactory factory = new PrintWriterFactory();
-        String fileName = "/opt/development/workspaces/Catalogo/temp/contatos.txt";
+        String fileName = "/home/daniel/development/repos/JavaWeb/src/main/contatos.txt";
         DataAccess dataAccess = new DataAccess(new DataWriter(factory.createWriter(fileName)), new DataReader(fileName));
 
         response.setContentType("text/html");

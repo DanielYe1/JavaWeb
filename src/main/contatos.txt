@@ -1,0 +1,5 @@
+nome:null - email:null - mensagem:null
+nome:fulano - email:null - mensagem:null
+nome:fulano?email=teste@teste?mensagem=ola mundo - email:null - mensagem:null
+nome:fulano email=teste@teste mensagem=ola mundo - email:null - mensagem:null
+nome:fulano - email:teste@teste - mensagem:ola mundo
