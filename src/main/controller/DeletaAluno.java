@@ -10,14 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/atualiza/turma")
-public class AtualizaTurma extends HttpServlet {
+@WebServlet("/deleta/aluno")
+public class DeletaAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public AtualizaTurma() {
+    public DeletaAluno() {
         super();
     }
 
@@ -34,19 +33,13 @@ public class AtualizaTurma extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("update turmas set instrutores_id = ?, cursos_id = ?, " +
-                    "data_inicio = ?, data_final = ?, carga_horaria = ? where id = ?");
-            stmt.setInt(1, Integer.parseInt(request.getParameter("instrutores_id")));
-            stmt.setInt(2, Integer.parseInt(request.getParameter("cursos_id")));
-            stmt.setDate(3, Date.valueOf(request.getParameter("data_matricula")));
-            stmt.setDate(4, Date.valueOf(request.getParameter("data_final")));
-            stmt.setInt(5, Integer.parseInt(request.getParameter("carga_horaria")));
-            stmt.setString(6, request.getParameter("id"));
+            PreparedStatement stmt = conexao.prepareStatement("delete from alunos where id = ?");
+            stmt.setString(1, request.getParameter("id"));
 
             int i = stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
-            out.println("A Turma " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            System.out.println("atualizei "+i);
+            out.println("O Aluno " + request.getParameter("nome") + " foi deletado com sucesso.");
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

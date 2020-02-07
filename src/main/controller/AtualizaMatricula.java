@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/cadastro/matricula")
+@WebServlet("/atualiza/matricula")
 public class AtualizaMatricula extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
