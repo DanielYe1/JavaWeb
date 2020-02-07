@@ -11,12 +11,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 @WebServlet("/cadastroinstrutor")
-public class CadastroInstrutor extends HttpServlet {
+public class CadastroMatricula extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public CadastroInstrutor() {
+    public CadastroMatricula() {
         super();
     }
 
@@ -33,18 +35,17 @@ public class CadastroInstrutor extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("insert into instrutores(nome, email, valor_hora, login, senha, experiencia) values(?,?,?,?,?,?)");
-            stmt.setString(1, request.getParameter("nome"));
-            stmt.setString(2, request.getParameter("email"));
-            stmt.setInt(3, Integer.parseInt(request.getParameter("valor_hora")));
-            stmt.setString(4, request.getParameter("login"));
-            stmt.setString(5, request.getParameter("senha"));
-            stmt.setString(6, request.getParameter("experiencia"));
+            PreparedStatement stmt = conexao.prepareStatement("insert into matriculas(turmas_id, alunos_id, data_matricula, nota) values(?,?,?,?)");
+            stmt.setInt(1, Integer.parseInt(request.getParameter("turmas_id")));
+            stmt.setInt(2, Integer.parseInt(request.getParameter("alunos_id")));
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            stmt.setDate(3, (java.sql.Date)formatter.parse(request.getParameter("data_matricula")));
+            stmt.setInt(4, Integer.parseInt(request.getParameter("nota")));
 
             int i = stmt.executeUpdate();
 
             System.out.println("salvei "+i);
-            out.println("O Instrutor " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            out.println("O Curso " + request.getParameter("nome") + " foi cadastrado com sucesso.");
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

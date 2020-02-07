@@ -13,10 +13,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 @WebServlet("/cadastroinstrutor")
-public class CadastroInstrutor extends HttpServlet {
+public class CadastroCurso extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public CadastroInstrutor() {
+    public CadastroCurso() {
         super();
     }
 
@@ -33,18 +33,17 @@ public class CadastroInstrutor extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("insert into instrutores(nome, email, valor_hora, login, senha, experiencia) values(?,?,?,?,?,?)");
+            PreparedStatement stmt = conexao.prepareStatement("insert into cursos(nome, requisito, ementa, carga_horaria, preco) values(?,?,?,?,?)");
             stmt.setString(1, request.getParameter("nome"));
-            stmt.setString(2, request.getParameter("email"));
-            stmt.setInt(3, Integer.parseInt(request.getParameter("valor_hora")));
-            stmt.setString(4, request.getParameter("login"));
-            stmt.setString(5, request.getParameter("senha"));
-            stmt.setString(6, request.getParameter("experiencia"));
+            stmt.setString(2, request.getParameter("requisito"));
+            stmt.setString(3, request.getParameter("ementa"));
+            stmt.setInt(4, Integer.parseInt(request.getParameter("carga_horaria")));
+            stmt.setFloat(5, Float.parseFloat(request.getParameter("preco")));
 
             int i = stmt.executeUpdate();
 
             System.out.println("salvei "+i);
-            out.println("O Instrutor " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            out.println("O Curso " + request.getParameter("nome") + " foi cadastrado com sucesso.");
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());
