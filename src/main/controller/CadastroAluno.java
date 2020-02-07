@@ -33,7 +33,7 @@ public class CadastroAluno extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("insert into alunos values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement stmt = conexao.prepareStatement("insert into alunos(cpf, nome, email, celular, login, senha, endereco, cidade, bairro, cep, comentario, aprovado) values(?,?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, request.getParameter("cpf"));
             stmt.setString(2, request.getParameter("nome"));
             stmt.setString(3, request.getParameter("email"));
