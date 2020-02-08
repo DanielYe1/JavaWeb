@@ -15,11 +15,8 @@ public class Aluno {
     private String comentario;
     private char aprovado;
 
-
-    public Aluno() {
-    }
-
-    public Aluno(String cpf, String nome, String email, String celular, String login, String senha, String endereco, String cidade, String bairro, String cep, String comentario, char aprovado) {
+    public Aluno(int id, String cpf, String nome, String email, String celular, String login, String senha, String endereco, String cidade, String bairro, String cep, String comentario, char aprovado) {
+        this.id = id;
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;

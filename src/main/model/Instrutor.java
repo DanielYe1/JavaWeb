@@ -21,6 +21,16 @@ public class Instrutor {
         return nome;
     }
 
+    public Instrutor(int id, String nome, String email, int valorHora, String login, String senha, String experiencia) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.valorHora = valorHora;
+        this.login = login;
+        this.senha = senha;
+        this.experiencia = experiencia;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }

@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Conexao {
 
@@ -31,9 +33,24 @@ public class Conexao {
         PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
         ResultSet resultado = preparedStatement.executeQuery();
 
+        List<Aluno> alunos = new ArrayList<>();
         while(resultado.next()){
-            System.out.println(resultado.getString("nome"));
-
+            alunos.add(new Aluno(
+                    Integer.parseInt(resultado.getString("id")),
+                    resultado.getString("cpf"),
+                    resultado.getString("nome"),
+                    resultado.getString("email"),
+                    resultado.getString("celular"),
+                    resultado.getString("login"),
+                    resultado.getString("senha"),
+                    resultado.getString("endereco"),
+                    resultado.getString("cidade"),
+                    resultado.getString("bairro"),
+                    resultado.getString("cep"),
+                    resultado.getString("comentario"),
+                    resultado.getString("aprovado").charAt(0)));
         }
+        System.out.println(alunos);
+
     }
 }

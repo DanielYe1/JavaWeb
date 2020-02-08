@@ -8,14 +8,12 @@ public class Curso {
     private int cargaHoraria;
     private double preco;
 
-    public Curso() {
-    }
-
     public int getId() {
         return id;
     }
 
-    public Curso(String nome, String requisito, String ementa, int cargaHoraria, double preco) {
+    public Curso(int id, String nome, String requisito, String ementa, int cargaHoraria, double preco) {
+        this.id = id;
         this.nome = nome;
         this.requisito = requisito;
         this.ementa = ementa;

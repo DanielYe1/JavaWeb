@@ -9,6 +9,16 @@ public class Turma {
     private int idCurso;
     private Date dataInicio;
     private Date dataFinal;
+
+    public Turma(int id, int idInstrutor, int idCurso, Date dataInicio, Date dataFinal, int cargaHoraria) {
+        this.id = id;
+        this.idInstrutor = idInstrutor;
+        this.idCurso = idCurso;
+        this.dataInicio = dataInicio;
+        this.dataFinal = dataFinal;
+        this.cargaHoraria = cargaHoraria;
+    }
+
     private int cargaHoraria;
 
     public int getId() {
