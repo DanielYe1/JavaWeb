@@ -38,11 +38,11 @@ public class Conexao {
     private static boolean verificaTabelaUsuario(String user, String senha, String tabela) throws SQLException {
         Connection conexao = Conexao.getConexao();
 
-        String selectSQL = "SELECT * FROM ? where login = ? and senha = ?";
+        String selectSQL = String.format("SELECT * FROM %s where login = ? and senha = ?", tabela);
+
         PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-        preparedStatement.setString(1, tabela);
-        preparedStatement.setString(2, user);
-        preparedStatement.setString(3, senha);
+        preparedStatement.setString(1, user);
+        preparedStatement.setString(2, senha);
         ResultSet resultado = preparedStatement.executeQuery();
 
         return resultado.next();
