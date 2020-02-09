@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
 
             HttpSession session = request.getSession();
             switch (role) {
-                case ("admnistrador"):
+                case ("admin"):
                     session.setAttribute("admin", true);
                     session.setAttribute("user", user);
                     request.getRequestDispatcher("admin.jsp").forward(request, response);
