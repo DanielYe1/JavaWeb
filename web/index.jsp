@@ -1,22 +1,21 @@
-<%@ page import="java.util.List" %><%--
-  Created by IntelliJ IDEA.
-  User: daniel.ye
-  Date: 08/03/17
-  Time: 18:26
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>$Title$</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+<script src="js/bootstrap.js"></script>
 <body>
-$DEVERIA FUNCIONAR$
-<% List elist = (List)request.getAttribute("empList");
-    for (int i = 0; i < elist.size(); i++) {
-        out.println(elist.get(0));
-    }
-%>
+
+<jsp:include page="paginas/menu.html" />
+<c:forEach items="${alunos}" var="student">
+    <p>${student}</p><br/>
+</c:forEach>
+TESTEZAO
+<jsp:include page="teste.jsp" />
 
 </body>
 </html>
