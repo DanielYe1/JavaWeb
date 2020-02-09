@@ -49,8 +49,8 @@ public class ListaCursos extends HttpServlet {
                 ));
             }
 
-            request.setAttribute("turmas", cursos);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            request.setAttribute("cursos", cursos);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/cursos.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

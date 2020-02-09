@@ -38,20 +38,20 @@ public class ListaTurmas extends HttpServlet {
             ResultSet resultado = preparedStatement.executeQuery();
 
             List<Turma> turmas = new ArrayList<>();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             while (resultado.next()) {
                 turmas.add(new Turma(
                         Integer.parseInt(resultado.getString("id")),
                         Integer.parseInt(resultado.getString("instrutores_id")),
                         Integer.parseInt(resultado.getString("cursos_id")),
-                        dateFormat.parse(resultado.getString("data_matricula")),
+                        dateFormat.parse(resultado.getString("data_inicio")),
                         dateFormat.parse(resultado.getString("data_final")),
                         Integer.parseInt(resultado.getString("carga_horaria"))
                         ));
             }
 
             request.setAttribute("turmas", turmas);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/turmas.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

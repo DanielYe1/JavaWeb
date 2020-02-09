@@ -49,7 +49,7 @@ public class ListaInstrutor extends HttpServlet {
             }
 
             request.setAttribute("instrutores", instrutores);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/professores.html");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/instrutores.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {
