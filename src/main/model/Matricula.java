@@ -17,6 +17,17 @@ public class Matricula {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Matricula{" +
+                "id=" + id +
+                ", idTurma=" + idTurma +
+                ", IdAluno=" + IdAluno +
+                ", dataMatricula=" + dataMatricula +
+                ", nota=" + nota +
+                '}';
+    }
+
     public int getIdTurma() {
         return idTurma;
     }

@@ -1,6 +1,5 @@
 package main.controller;
 
-import main.model.Aluno;
 import main.model.Instrutor;
 import main.model.repositorio.Conexao;
 
@@ -50,7 +49,7 @@ public class ListaInstrutor extends HttpServlet {
             }
 
             request.setAttribute("instrutores", instrutores);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/professores.html");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

@@ -54,7 +54,7 @@ public class ListaAluno extends HttpServlet {
             }
 
             request.setAttribute("alunos", alunos);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/alunos.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

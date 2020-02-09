@@ -31,6 +31,25 @@ public class Aluno {
         this.aprovado = aprovado;
     }
 
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "id=" + id +
+                ", cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", celular='" + celular + '\'' +
+                ", login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cep='" + cep + '\'' +
+                ", comentario='" + comentario + '\'' +
+                ", aprovado=" + aprovado +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

@@ -21,6 +21,19 @@ public class Instrutor {
         return nome;
     }
 
+    @Override
+    public String toString() {
+        return "Instrutor{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", valorHora=" + valorHora +
+                ", login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                ", experiencia='" + experiencia + '\'' +
+                '}';
+    }
+
     public Instrutor(int id, String nome, String email, int valorHora, String login, String senha, String experiencia) {
         this.id = id;
         this.nome = nome;

@@ -22,6 +22,16 @@ public class Administrador {
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return "Administrador{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", login='" + login + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
+
     public String getLogin() {
         return login;
     }

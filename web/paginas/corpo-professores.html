@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="main.model.Instrutor" %>
 <div class="container">
 
     <br/>
@@ -8,6 +10,24 @@
     </div>
 
     <div class="row">
+
+        <% List<Instrutor> elist = (List) request.getAttribute("instrutores");
+            for (int i = 0; i < elist.size(); i++) {
+                out.println("<div class=\"col-md-4 col-sm-6\">\n" +
+                        "            <div class=\"thumbnail\">\n" +
+                        "                <img class=\"img-rounded img-responsive center-block\" src=\"images/ANDERSON_GALEOTE.jpg\">\n" +
+                        "                <div class=\"caption\">");
+
+                out.println(String.format("<h3>%s<h3>", elist.get(i).getNome()));
+                out.println(String.format("<p>%s<p>", elist.get(i).getExperiencia()));
+
+
+                out.println("                </div>\n" +
+                        "            </div>\n" +
+                        "        </div>");
+            }
+        %>
+
         <div class="col-md-4 col-sm-6">
             <div class="thumbnail">
                 <img class="img-rounded img-responsive center-block" src="images/ANDERSON_GALEOTE.jpg">

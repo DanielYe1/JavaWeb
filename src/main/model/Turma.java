@@ -1,6 +1,5 @@
 package main.model;
 
-import javax.persistence.*;
 import java.util.Date;
 
 public class Turma {
@@ -9,6 +8,18 @@ public class Turma {
     private int idCurso;
     private Date dataInicio;
     private Date dataFinal;
+
+    @Override
+    public String toString() {
+        return "Turma{" +
+                "id=" + id +
+                ", idInstrutor=" + idInstrutor +
+                ", idCurso=" + idCurso +
+                ", dataInicio=" + dataInicio +
+                ", dataFinal=" + dataFinal +
+                ", cargaHoraria=" + cargaHoraria +
+                '}';
+    }
 
     public Turma(int id, int idInstrutor, int idCurso, Date dataInicio, Date dataFinal, int cargaHoraria) {
         this.id = id;

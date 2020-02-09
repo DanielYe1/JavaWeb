@@ -2,9 +2,6 @@ package main.model.repositorio;
 
 import main.model.Aluno;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

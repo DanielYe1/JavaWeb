@@ -12,6 +12,18 @@ public class Curso {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return "Curso{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", requisito='" + requisito + '\'' +
+                ", ementa='" + ementa + '\'' +
+                ", cargaHoraria=" + cargaHoraria +
+                ", preco=" + preco +
+                '}';
+    }
+
     public Curso(int id, String nome, String requisito, String ementa, int cargaHoraria, double preco) {
         this.id = id;
         this.nome = nome;
