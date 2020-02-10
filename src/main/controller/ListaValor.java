@@ -38,9 +38,12 @@ public class ListaValor extends HttpServlet {
             ResultSet resultado = preparedStatement.executeQuery();
 
             resultado.next();
-
-            float valor = Integer.parseInt(resultado.getString("valor"));
+            float valor = 0;
+            if (resultado.getString("valor") != null) {
+                valor = Integer.parseInt(resultado.getString("valor"));
+            }
             request.setAttribute("valor", valor);
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("valorProfessor.jsp");
 
             dispatcher.forward(request, response);
