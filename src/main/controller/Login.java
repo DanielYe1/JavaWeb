@@ -27,28 +27,31 @@ public class Login extends HttpServlet {
 
         try {
             String user = request.getParameter("login");
-            String role = Conexao.autenticaUsuario(user, request.getParameter("senha"));
+            String[] role = Conexao.autenticaUsuario(user, request.getParameter("senha"));
             PrintWriter out = response.getWriter();
-            if(role.equals("nada")){
+            if (role == null) {
                 out.println("Dados errados");
-                request.getRequestDispatcher("login.jsp");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
             HttpSession session = request.getSession();
-            switch (role) {
+            switch (role[0]) {
                 case ("admin"):
                     session.setAttribute("admin", true);
                     session.setAttribute("user", user);
+                    session.setAttribute("id", Integer.parseInt(role[1]));
                     request.getRequestDispatcher("/login/admin.jsp").forward(request, response);
                     break;
                 case ("instrutor"):
                     session.setAttribute("instrutor", true);
                     session.setAttribute("user", user);
+                    session.setAttribute("id", Integer.parseInt(role[1]));
                     request.getRequestDispatcher("/login/instrutor.jsp").forward(request, response);
                     break;
                 case ("aluno"):
                     session.setAttribute("aluno", true);
                     session.setAttribute("user", user);
+                    session.setAttribute("id", Integer.parseInt(role[1]));
                     request.getRequestDispatcher("/login/aluno.jsp").forward(request, response);
                     break;
             }

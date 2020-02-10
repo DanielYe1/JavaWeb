@@ -1,11 +1,6 @@
 package main.model.repositorio;
 
-import main.model.Aluno;
-
-import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Conexao {
 
@@ -25,18 +20,30 @@ public class Conexao {
         return conexao;
     }
 
-    public static String autenticaUsuario(String user, String senha) throws SQLException {
-        if (verificaTabelaUsuario(user, senha, "administrador")) {
-            return "admin";
-        } else if (verificaTabelaUsuario(user, senha, "instrutores")) {
-            return "instrutor";
-        } else if (verificaTabelaUsuario(user, senha, "alunos")) {
-            return "aluno";
+    public static String[] autenticaUsuario(String user, String senha) throws SQLException {
+        String[] valores = new String[2];
+
+        String idAdmin = verificaTabelaUsuarioERetornaId(user, senha, "administrador");
+        String idInstrutor = verificaTabelaUsuarioERetornaId(user, senha, "instrutores");
+        String idAluno = verificaTabelaUsuarioERetornaId(user, senha, "alunos");
+        if (idAdmin != null) {
+            valores[0] = "admin";
+            valores[1] = idAdmin;
+            return valores;
+        } else if (idInstrutor != null) {
+            valores[0] = "instrutor";
+            valores[1] = idInstrutor;
+            return valores;
+        } else if (idAluno != null) {
+            valores[0] = "aluno";
+            valores[1] = idAluno;
+            return valores;
         }
-        return "nada";
+
+        return null;
     }
 
-    private static boolean verificaTabelaUsuario(String user, String senha, String tabela) throws SQLException {
+    private static String verificaTabelaUsuarioERetornaId(String user, String senha, String tabela) throws SQLException {
         Connection conexao = Conexao.getConexao();
 
         String selectSQL = String.format("SELECT * FROM %s where login = ? and senha = ?", tabela);
@@ -45,8 +52,11 @@ public class Conexao {
         preparedStatement.setString(1, user);
         preparedStatement.setString(2, senha);
         ResultSet resultado = preparedStatement.executeQuery();
+        if (resultado.next()) {
+            return resultado.getString("id");
+        }
 
-        return resultado.next();
+        return null;
     }
 
 
