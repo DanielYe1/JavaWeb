@@ -10,7 +10,13 @@
 </head>
 <body>
 <jsp:include page="paginas/menu.jsp"/>
-<jsp:include page="paginas/corpo-login.html"/>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h2>SEM ACESSO</h2>
+        <p>Não possui acesso a página requerida</p>
+    </div>
+</div>
 <jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

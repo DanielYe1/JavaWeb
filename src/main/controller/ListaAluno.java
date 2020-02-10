@@ -30,7 +30,7 @@ public class ListaAluno extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             ListaAdmin.selectAlunos(request);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/alunos.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/comentarios.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

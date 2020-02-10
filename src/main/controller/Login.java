@@ -22,12 +22,6 @@ public class Login extends HttpServlet {
         super();
     }
 
-    protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("get teste");
-    }
-
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
@@ -45,17 +39,17 @@ public class Login extends HttpServlet {
                 case ("admin"):
                     session.setAttribute("admin", true);
                     session.setAttribute("user", user);
-                    request.getRequestDispatcher("admin.jsp").forward(request, response);
+                    request.getRequestDispatcher("/login/admin.jsp").forward(request, response);
                     break;
                 case ("instrutor"):
                     session.setAttribute("instrutor", true);
                     session.setAttribute("user", user);
-                    request.getRequestDispatcher("instrutor.jsp").forward(request, response);
+                    request.getRequestDispatcher("/login/instrutor.jsp").forward(request, response);
                     break;
                 case ("aluno"):
                     session.setAttribute("aluno", true);
                     session.setAttribute("user", user);
-                    request.getRequestDispatcher("aluno.jsp").forward(request, response);
+                    request.getRequestDispatcher("/login/aluno.jsp").forward(request, response);
                     break;
             }
 

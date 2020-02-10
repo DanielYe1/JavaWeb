@@ -9,12 +9,14 @@
     <title>Bootstrap</title>
 </head>
 <body>
-    <div id="menu"></div>
-    <div id="corpo-tabelas"></div>
-    <div id="rodape"></div>
 
-    <jsp:include page="paginas/menu.jsp"/>
-    <jsp:include page="paginas/corpo-tabelas.html"/>
-    <jsp:include page="paginas/rodape.html"/>
+<% //In case, if Editor session is not set, redirect to Login page
+    if ((request.getSession(false).getAttribute("admin") == null)) {
+%>
+<jsp:forward page="semacesso.jsp"></jsp:forward>
+<%} %>
+<jsp:include page="paginas/menu.jsp"/>
+<jsp:include page="paginas/corpo-tabelas.html"/>
+<jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

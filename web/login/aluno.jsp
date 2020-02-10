@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<script src="../js/bootstrap.js"></script>
 <body>
 
 <jsp:include page="../paginas/menu.jsp" />
-<c:forEach items="${alunos}" var="aluno">
-    <p>${aluno}</p><br/>
-</c:forEach>
+BEM VINDO ALUNO
 <jsp:include page="../paginas/rodape.html" />
 
 </body>

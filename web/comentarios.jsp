@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 <jsp:include page="paginas/menu.jsp"/>
-<jsp:include page="paginas/corpo-comentarios.html"/>
+<jsp:include page="paginas/corpo-comentarios.jsp"/>
 <jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

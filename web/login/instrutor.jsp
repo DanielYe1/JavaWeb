@@ -3,17 +3,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Turmas</title>
+    <title>$Title$</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<script src="../js/bootstrap.js"></script>
 <body>
 
 <jsp:include page="../paginas/menu.jsp" />
-<c:forEach items="${turmas}" var="val">
-    <p>${val}</p><br/>
-</c:forEach>
+BEM VINDO INSTRUTOR
 <jsp:include page="../paginas/rodape.html" />
 
 </body>

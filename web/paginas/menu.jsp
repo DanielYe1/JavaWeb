@@ -9,7 +9,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="sobre.jsp">Sobre</a></li>
                 <li><a href="/instrutor">Professores</a></li>
-                <li><a href="comentarios.jsp">Comentarios</a></li>
+                <li><a href="/aluno">Comentarios</a></li>
                 <li><a href="registro.jsp">Registro</a></li>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="tabelas.jsp">Tabelas</a></li>

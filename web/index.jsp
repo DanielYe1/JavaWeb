@@ -13,7 +13,7 @@
 <div class="container">
     <br>
     <div class="jumbotron">
-        <h2 id="marcos">Cursos Lero Lero</h2>
+        <h2>Cursos Lero Lero</h2>
         <p>Comece o ano com tudo
             Invista no aprendizado. Compre cursos a partir de R$23,99 cada.
         </p>
