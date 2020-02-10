@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.repositorio.Conexao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-@WebServlet("/cadastro/aluno")
+@WebServlet("/cadastro-aluno")
 public class CadastroAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -47,10 +48,11 @@ public class CadastroAluno extends HttpServlet {
             stmt.setString(11, request.getParameter("comentario"));
             stmt.setString(12, request.getParameter("aprovado"));
 
-            int i = stmt.executeUpdate();
+            stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
-            out.println("O Aluno " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            request.setAttribute("message", "O Aluno foi cadastrado com sucesso.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

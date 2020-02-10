@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.repositorio.Conexao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/atualiza/turma")
+@WebServlet("/atualiza-turma")
 public class AtualizaTurma extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -43,10 +44,11 @@ public class AtualizaTurma extends HttpServlet {
             stmt.setInt(5, Integer.parseInt(request.getParameter("carga_horaria")));
             stmt.setString(6, request.getParameter("id"));
 
-            int i = stmt.executeUpdate();
+            stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
-            out.println("A Turma " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            request.setAttribute("message", "A turma foi atualizada com sucesso.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

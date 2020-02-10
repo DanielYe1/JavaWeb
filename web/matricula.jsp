@@ -16,7 +16,7 @@
         <h2>Faça sua matrícula</h2>
     </div>
 
-    <form class="form-horizontal" action="cadastro/matricula" method="post">
+    <form class="form-horizontal" action="cadastro-matricula" method="post">
 
         <div class="form-group">
             <label class="col-sm-2 control-label required">ID da turma</label>

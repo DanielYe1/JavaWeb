@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.repositorio.Conexao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/cadastro/turma")
+@WebServlet("/cadastro-turma")
 public class CadastroTurma extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -41,10 +42,11 @@ public class CadastroTurma extends HttpServlet {
             stmt.setDate(4, Date.valueOf(request.getParameter("data_final")));
             stmt.setInt(5, Integer.parseInt(request.getParameter("carga_horaria")));
 
-            int i = stmt.executeUpdate();
+            stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
-            out.println("O Curso " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            request.setAttribute("message", "A turma foi cadastrado com sucesso.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

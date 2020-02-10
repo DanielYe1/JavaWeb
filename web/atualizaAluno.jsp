@@ -16,7 +16,7 @@
         <h2>Atualize seus dados</h2>
     </div>
 
-    <form class="form-horizontal" action="atualiza/aluno" method="post">
+    <form class="form-horizontal" action="atualiza-aluno" method="post">
 
         <div class="form-group">
             <label class="col-sm-2 control-label required">CPF</label>

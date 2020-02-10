@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.repositorio.Conexao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 
-@WebServlet("/atualiza/matricula")
+@WebServlet("/atualiza-matricula")
 public class AtualizaMatricula extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -23,8 +24,6 @@ public class AtualizaMatricula extends HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("get teste");
     }
 
     protected void doPost(HttpServletRequest request,
@@ -42,10 +41,11 @@ public class AtualizaMatricula extends HttpServlet {
             stmt.setInt(4, Integer.parseInt(request.getParameter("nota")));
             stmt.setString(5, request.getParameter("id"));
 
-            int i = stmt.executeUpdate();
+            stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
-            out.println("A Matricula " + request.getParameter("nome") + " foi cadastrado com sucesso.");
+            request.setAttribute("message", "A matricula foi atualizada com sucesso.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());
