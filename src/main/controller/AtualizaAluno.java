@@ -48,7 +48,11 @@ public class AtualizaAluno extends HttpServlet {
             stmt.setString(10, request.getParameter("cep"));
             stmt.setString(11, request.getParameter("comentario"));
             stmt.setString(12, request.getParameter("aprovado"));
-            stmt.setString(13, request.getParameter("id"));
+            if (request.getParameter("id") == null) {
+                stmt.setString(13, (String) request.getSession().getAttribute("id"));
+            } else {
+                stmt.setString(13, request.getParameter("id"));
+            }
 
             int i = stmt.executeUpdate();
 

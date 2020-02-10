@@ -1,6 +1,5 @@
 package main.controller;
 
-import main.model.Curso;
 import main.model.Nota;
 import main.model.repositorio.Conexao;
 
@@ -18,11 +17,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/notas")
-public class ListaNotas extends HttpServlet {
+@WebServlet("/valor")
+public class ListaValor extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public ListaNotas() {
+    public ListaValor() {
         super();
     }
 
@@ -33,23 +32,15 @@ public class ListaNotas extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            String selectSQL = "select c.nome as curso, t.id as turmas_id, m.nota as nota from alunos " +
-                    "join matriculas m on alunos.id = m.alunos_id join turmas t on m.turmas_id = t.id " +
-                    "join cursos c on t.cursos_id = c.id where alunos_id = 1;";
+            String selectSQL = "select sum(carga_horaria*valor_hora) as valor from instrutores join turmas t on instrutores.id = t.instrutores_id where instrutores_id = 1;";
             PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
             ResultSet resultado = preparedStatement.executeQuery();
 
-            List<Nota> notas = new ArrayList<>();
-            while (resultado.next()) {
-                notas.add(new Nota(
-                        resultado.getString("curso"),
-                        Integer.parseInt(resultado.getString("turmas_id")),
-                        Integer.parseInt(resultado.getString("nota"))
-                ));
-            }
+            resultado.next();
 
-            request.setAttribute("notas", notas);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/notasAluno.jsp");
+            float valor = Integer.parseInt(resultado.getString("valor"));
+            request.setAttribute("valor", valor);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("valorProfessor.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

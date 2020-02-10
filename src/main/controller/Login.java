@@ -39,19 +39,19 @@ public class Login extends HttpServlet {
                 case ("admin"):
                     session.setAttribute("admin", true);
                     session.setAttribute("user", user);
-                    session.setAttribute("id", Integer.parseInt(role[1]));
+                    session.setAttribute("id", role[1]);
                     request.getRequestDispatcher("/login/admin.jsp").forward(request, response);
                     break;
                 case ("instrutor"):
                     session.setAttribute("instrutor", true);
                     session.setAttribute("user", user);
-                    session.setAttribute("id", Integer.parseInt(role[1]));
+                    session.setAttribute("id", role[1]);
                     request.getRequestDispatcher("/login/instrutor.jsp").forward(request, response);
                     break;
                 case ("aluno"):
                     session.setAttribute("aluno", true);
                     session.setAttribute("user", user);
-                    session.setAttribute("id", Integer.parseInt(role[1]));
+                    session.setAttribute("id", role[1]);
                     request.getRequestDispatcher("/login/aluno.jsp").forward(request, response);
                     break;
             }

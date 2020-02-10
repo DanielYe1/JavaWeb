@@ -19,9 +19,9 @@
     </div>
     <br>
     <ul class="list-group">
-        <li class="list-group-item"><a href="comentarios">Alterar dados</a></li>
+        <li class="list-group-item"><a href="../atualizaInstrutor.jsp">Alterar dados</a></li>
         <li class="list-group-item"><a href="comentarios">Dar nota</a></li>
-        <li class="list-group-item"><a href="comentarios">Verificar valor a receber</a></li>
+        <li class="list-group-item"><a href="valor">Verificar valor a receber</a></li>
     </ul>
 </div>
 <jsp:include page="../paginas/rodape.html" />

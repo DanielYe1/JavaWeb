@@ -13,7 +13,6 @@
                 <li><a href="comentarios">Comentarios</a></li>
                 <li><a href="registro.jsp">Registro</a></li>
                 <li><a href="login.jsp">Login</a></li>
-                <li><a href="tabelas.jsp">Tabelas</a></li>
             </ul>
         </div>
     </div>

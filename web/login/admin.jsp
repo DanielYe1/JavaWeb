@@ -18,10 +18,13 @@
     </div>
     <br>
     <ul class="list-group">
-        <li class="list-group-item"><a href="comentarios">Matricula em curso</a></li>
-        <li class="list-group-item"><a href="comentarios">Alterar dados</a></li>
-        <li class="list-group-item"><a href="comentarios">Verificar notas</a></li>
-        <li class="list-group-item"><a href="comentarios">Upload foto</a></li>
+        <li class="list-group-item"><a href="admin">Listar e deletar dados</a></li>
+        <li class="list-group-item"><a href="../tabelasCadastro.jsp">Cadastrar dados</a></li>
+        <li class="list-group-item"><a href="../tabelasAtualiza.jsp">Alterar dados</a></li>
+        <li class="list-group-item"><a href="comentarios">Verificar notas alunos</a></li>
+        <li class="list-group-item"><a href="comentarios">Verifica valor professores</a></li>
+        <li class="list-group-item"><a href="comentarios">Upload foto instrutor</a></li>
+        <li class="list-group-item"><a href="comentarios">Upload foto curso</a></li>
     </ul>
 </div>
 <jsp:include page="../paginas/rodape.html" />

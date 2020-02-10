@@ -41,11 +41,15 @@ public class AtualizaInstrutor extends HttpServlet {
             stmt.setString(4, request.getParameter("login"));
             stmt.setString(5, request.getParameter("senha"));
             stmt.setString(6, request.getParameter("experiencia"));
-            stmt.setString(7, request.getParameter("id"));
+            if (request.getParameter("id") == null) {
+                stmt.setString(7, (String) request.getSession().getAttribute("id"));
+            } else {
+                stmt.setString(7, request.getParameter("id"));
+            }
 
             int i = stmt.executeUpdate();
 
-            System.out.println("salvei "+i);
+            System.out.println("salvei " + i);
             out.println("O Instrutor " + request.getParameter("nome") + " foi cadastrado com sucesso.");
         } catch (Exception e) {
 

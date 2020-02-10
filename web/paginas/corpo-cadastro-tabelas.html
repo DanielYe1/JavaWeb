@@ -1,0 +1,414 @@
+<div class="container">
+
+    <h3 id="excursoes">Nossos Formulários</h3>
+
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion">Cursos</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container">
+                        <ul class="media-list">
+                            <div class="row">
+                                <form class="form-horizontal" action="/cadastro/curso" method="post">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Nome</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="nome" minlength="3" maxlength="50"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Requisito</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="requisito" minlength="3" maxlength="255">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Ementa</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="ementa" minlength="3" maxlength="255">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Carga Horária</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="carga_horaria" min="0" maxlength="5">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Preço</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="preco" step="0.01">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <button type="submit" class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-save"></span>Enviar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion">Instrutores</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container">
+                        <ul class="media-list">
+                            <div class="row">
+                                <form class="form-horizontal" action="cadastro/instrutor" method="post">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Nome</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="nome" minlength="3" maxlength="50"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Email</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="email" minlength="3" maxlength="50"
+                                                   required>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Valor Hora</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="valor_hora" min="0" minlength="3"
+                                                   maxlength="10">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Login</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" name="login" minlength="3" maxlength="20"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Senha</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="password" name="senha" minlength="3" maxlength="255"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Experiencia</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="password" name="experiencia" minlength="3" maxlength="255" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <button type="submit" class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-save"></span>Enviar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion">Mátriculas</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="/cadastro/matricula" method="post">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">ID da turma</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="number" name="turmas_id" minlength="3" maxlength="10" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">ID do aluno</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="number" name="alunos_id" minlength="3" maxlength="11" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Data da Matricula</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="date" name="data_matricula" min="1900-01-02" max="2020-12-31">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Nota</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="number" name="nota" min="0" max="10">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary"><span
+                                        class="glyphicon glyphicon-save"></span>Enviar
+                                </button>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion">Turmas</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container">
+                        <ul class="media-list">
+                            <div class="row">
+                                <form class="form-horizontal" action="/cadastro/turma" method="post">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">ID do instrutor</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="instrutores_id" minlength="3" maxlength="11" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">ID do curso</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="cursos_id" minlength="3" maxlength="10" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Data de inicio</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="date" name="data_matricula" min="1900-01-02" max="2020-12-31">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Data de fim</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" name="data_final" type="date" min="1900-01-02" max="2020-12-31">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Carga Horária</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="number" name="carga_horaria" min="0" maxlength="5">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <button type="submit" class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-save"></span>Enviar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion">Administrador</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container">
+                        <ul class="media-list">
+                            <div class="row">
+                                <form class="form-horizontal">
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Nome</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" minlength="3" maxlength="50" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Login</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" minlength="3" maxlength="20" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label required">Senha</label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="password" minlength="3" maxlength="255" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-8 col-sm-offset-2">
+                                            <button type="submit" class="btn btn-primary"><span
+                                                    class="glyphicon glyphicon-save"></span>Enviar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse"
+                       data-parent="#accordion">Alunos</a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="cadastro/aluno" method="post">
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">CPF</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text"name="cpf" minlength="3" maxlength="11" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">Nome</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="nome" minlength="3" maxlength="50" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">Email</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="email" minlength="3" maxlength="50" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">Celular</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="celular" minlength="3" maxlength="14" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">Login</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="login" minlength="3" maxlength="20" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required">Senha</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="password" name="senha" minlength="3" maxlength="255" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Endereço</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="endereco" minlength="3" maxlength="50">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Cidade</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="cidade" minlength="3" maxlength="30">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Bairro</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="bairro" minlength="3" maxlength="30">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">CEP</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="cep" minlength="3" maxlength="9">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary"><span
+                                        class="glyphicon glyphicon-save"></span>Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
