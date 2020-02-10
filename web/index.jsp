@@ -10,7 +10,17 @@
 </head>
 <body>
 <jsp:include page="paginas/menu.jsp"/>
-<jsp:include page="paginas/corpo-home.html"/>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h2 id="marcos">Cursos Lero Lero</h2>
+        <p>Comece o ano com tudo
+            Invista no aprendizado. Compre cursos a partir de R$23,99 cada.
+        </p>
+        <p>A maior seleção de cursos do mundo.
+            Escolha entre mais de 100.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
+    </div>
+</div>
 <jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

@@ -31,26 +31,7 @@ public class ListaTurmas extends HttpServlet {
                          HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            Connection conexao = Conexao.getConexao();
-
-            String selectSQL = "SELECT * FROM turmas";
-            PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-            ResultSet resultado = preparedStatement.executeQuery();
-
-            List<Turma> turmas = new ArrayList<>();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            while (resultado.next()) {
-                turmas.add(new Turma(
-                        Integer.parseInt(resultado.getString("id")),
-                        Integer.parseInt(resultado.getString("instrutores_id")),
-                        Integer.parseInt(resultado.getString("cursos_id")),
-                        dateFormat.parse(resultado.getString("data_inicio")),
-                        dateFormat.parse(resultado.getString("data_final")),
-                        Integer.parseInt(resultado.getString("carga_horaria"))
-                        ));
-            }
-
-            request.setAttribute("turmas", turmas);
+            ListaAdmin.selectTurma(request);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/turmas.jsp");
 
             dispatcher.forward(request, response);

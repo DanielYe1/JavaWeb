@@ -31,25 +31,7 @@ public class ListaCursos extends HttpServlet {
                          HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            Connection conexao = Conexao.getConexao();
-
-            String selectSQL = "SELECT * FROM cursos";
-            PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-            ResultSet resultado = preparedStatement.executeQuery();
-
-            List<Curso> cursos = new ArrayList<>();
-            while (resultado.next()) {
-                cursos.add(new Curso(
-                        Integer.parseInt(resultado.getString("id")),
-                        resultado.getString("nome"),
-                        resultado.getString("requisito"),
-                        resultado.getString("ementa"),
-                        Integer.parseInt(resultado.getString("carga_horaria")),
-                        Float.parseFloat(resultado.getString("preco"))
-                ));
-            }
-
-            request.setAttribute("cursos", cursos);
+            ListaAdmin.selectCursos(request);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/cursos.jsp");
 
             dispatcher.forward(request, response);

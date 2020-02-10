@@ -29,26 +29,7 @@ public class ListaInstrutor extends HttpServlet {
                          HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            Connection conexao = Conexao.getConexao();
-
-            String selectSQL = "SELECT * FROM instrutores";
-            PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-            ResultSet resultado = preparedStatement.executeQuery();
-
-            List<Instrutor> instrutores = new ArrayList<>();
-            while (resultado.next()) {
-                instrutores.add(new Instrutor(
-                        Integer.parseInt(resultado.getString("id")),
-                        resultado.getString("nome"),
-                        resultado.getString("email"),
-                        Integer.parseInt(resultado.getString("valor_hora")),
-                        resultado.getString("login"),
-                        resultado.getString("senha"),
-                        resultado.getString("experiencia")
-                ));
-            }
-
-            request.setAttribute("instrutores", instrutores);
+            ListaAdmin.selectInstrutor(request);
             RequestDispatcher dispatcher = request.getRequestDispatcher("/instrutores.jsp");
 
             dispatcher.forward(request, response);

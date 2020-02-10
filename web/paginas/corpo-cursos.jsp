@@ -1,26 +1,27 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="container">
-
     <br/>
-    <div class="jumbotron">
-        <h2 id="marcos">Cursos Lero Lero</h2>
-        <p>Comece o ano com tudo
-            Invista no aprendizado. Compre cursos a partir de R$23,99 cada.
-        </p>
-        <p>A maior seleção de cursos do mundo.
-            Escolha entre mais de 100.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
-    </div>
 
     <div class="row">
+
+
+        <c:forEach items="${cursos}" var="val">
         <div class="col-md-3 col-sm-4">
             <div class="thumbnail">
                 <img class="img-rounded img-responsive center-block" src="images/investimentos.jpg">
                 <div class="caption">
-                    <h3>Investimentos</h3>
-                    <p>Investimentos em Renda Fixa, Ações da Bolsa de Valores e Fundos: Comece do zero e
-                        monte Sua Carteira de Investimentos</p>
+                    <h3>${val.nome}</h3>
+                    <p>ID:${val.id}</p>
+                    <p>Preço:${val.preco}</p>
+                    <p>Ementa:${val.ementa}</p>
+                    <p>Carga horária:${val.cargaHoraria}</p>
+                    <p>Requisito:${val.requisito}</p>
                 </div>
             </div>
         </div>
+        </c:forEach>
+
+
         <div class="col-md-3 col-sm-4">
             <div id="pm" class="thumbnail">
                 <img class="img-rounded img-responsive center-block" src="images/scrum.jpg">
