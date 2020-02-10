@@ -23,15 +23,13 @@ public class Instrutor {
 
     @Override
     public String toString() {
-        return "Instrutor{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", valorHora=" + valorHora +
-                ", login='" + login + '\'' +
-                ", senha='" + senha + '\'' +
-                ", experiencia='" + experiencia + '\'' +
-                '}';
+        return   "<tr>"+"<td>"+ id +"</td>" +
+                "<td>"+ nome +"</td>" +
+                "<td>"+ email +"</td>" +
+                "<td>"+ valorHora +"</td>" +
+                "<td>"+ login +"</td>" +
+                "<td>"+ senha +"</td>" +
+                "<td>"+ experiencia +"</td>" + "</tr>";
     }
 
     public Instrutor(int id, String nome, String email, int valorHora, String login, String senha, String experiencia) {

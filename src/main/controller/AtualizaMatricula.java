@@ -1,5 +1,6 @@
 package main.controller;
 
+import main.model.Turma;
 import main.model.repositorio.Conexao;
 
 import javax.servlet.RequestDispatcher;
@@ -13,8 +14,11 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet("/atualiza-matricula")
+@WebServlet("/atualiza-nota")
 public class AtualizaMatricula extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +37,27 @@ public class AtualizaMatricula extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("update matriculas set turmas_id = ?, alunos_id = ?," +
-                    " data_matricula = ?, nota = ? where id = ?");
-            stmt.setInt(1, Integer.parseInt(request.getParameter("turmas_id")));
-            stmt.setInt(2, Integer.parseInt(request.getParameter("alunos_id")));
-            stmt.setDate(3, Date.valueOf(request.getParameter("data_matricula")));
-            stmt.setInt(4, Integer.parseInt(request.getParameter("nota")));
-            stmt.setString(5, request.getParameter("id"));
+
+            PreparedStatement stmt = conexao.prepareStatement("select turmas.id as id from turmas join instrutores i on" +
+                    " turmas.instrutores_id = i.id where instrutores_id = ?;");
+            stmt.setString(1, (String) request.getSession().getAttribute("id"));
+            ResultSet resultado = stmt.executeQuery();
+            List<Integer> turmas = new ArrayList<>();
+            while (resultado.next()){
+                turmas.add(resultado.getInt("id"));
+            }
+
+
+
+            stmt = conexao.prepareStatement("update matriculas set " +
+                    " nota = ? where turmas_id = ? and alunos_id = ?");
+            stmt.setInt(1, Integer.parseInt(request.getParameter("nota")));
+            stmt.setInt(2, Integer.parseInt(request.getParameter("turmas_id")));
+            stmt.setInt(3, Integer.parseInt(request.getParameter("alunos_id")));
 
             stmt.executeUpdate();
 
-            request.setAttribute("message", "A matricula foi atualizada com sucesso.");
+            request.setAttribute("message", "A nota foi atualizada com sucesso.");
             RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
             dispatcher.forward(request, response);
         } catch (Exception e) {

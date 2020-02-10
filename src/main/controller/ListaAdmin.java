@@ -41,7 +41,7 @@ public class ListaAdmin extends HttpServlet {
             selectInstrutor(request);
             selectTurma(request);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/crud/lista.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/lista.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

@@ -2,6 +2,7 @@ package main.controller;
 
 import main.model.repositorio.Conexao;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-@WebServlet("/deleta/aluno")
+@WebServlet("/deleta-aluno")
 public class DeletaAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -36,10 +37,11 @@ public class DeletaAluno extends HttpServlet {
             PreparedStatement stmt = conexao.prepareStatement("delete from alunos where id = ?");
             stmt.setString(1, request.getParameter("id"));
 
-            int i = stmt.executeUpdate();
+            stmt.executeUpdate();
 
-            System.out.println("atualizei "+i);
-            out.println("O Aluno " + request.getParameter("nome") + " foi deletado com sucesso.");
+            request.setAttribute("message", "O aluno foi deletado com sucesso.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
         } catch (Exception e) {
 
             out.println("Erro: " + e.getMessage());

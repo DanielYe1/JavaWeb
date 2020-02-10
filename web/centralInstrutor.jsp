@@ -4,12 +4,12 @@
 <html>
 <head>
     <title>$Title$</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<jsp:include page="../paginas/menu.jsp" />
+<jsp:include page="paginas/menu.jsp" />
 
 <div class="container">
 
@@ -19,12 +19,12 @@
     </div>
     <br>
     <ul class="list-group">
-        <li class="list-group-item"><a href="../atualizaInstrutor.jsp">Alterar dados</a></li>
-        <li class="list-group-item"><a href="comentarios">Dar nota</a></li>
+        <li class="list-group-item"><a href="atualizaInstrutor.jsp">Alterar dados</a></li>
+        <li class="list-group-item"><a href="notasInstrutor.jsp">Dar nota</a></li>
         <li class="list-group-item"><a href="valor">Verificar valor a receber</a></li>
     </ul>
 </div>
-<jsp:include page="../paginas/rodape.html" />
+<jsp:include page="paginas/rodape.html" />
 
 </body>
 </html>

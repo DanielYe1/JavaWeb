@@ -11,14 +11,11 @@ public class Turma {
 
     @Override
     public String toString() {
-        return "Turma{" +
-                "id=" + id +
-                ", idInstrutor=" + idInstrutor +
-                ", idCurso=" + idCurso +
-                ", dataInicio=" + dataInicio +
-                ", dataFinal=" + dataFinal +
-                ", cargaHoraria=" + cargaHoraria +
-                '}';
+        return "<tr>"+"<td>"+ id +"</td>" +
+                "<td>"+ idInstrutor +"</td>" +
+                "<td>"+ idCurso +"</td>" +
+                "<td>"+ dataInicio +"</td>" +
+                "<td>"+ dataFinal +"</td>" + "</tr>";
     }
 
     public Turma(int id, int idInstrutor, int idCurso, Date dataInicio, Date dataFinal, int cargaHoraria) {

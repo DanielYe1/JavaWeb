@@ -14,14 +14,12 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", requisito='" + requisito + '\'' +
-                ", ementa='" + ementa + '\'' +
-                ", cargaHoraria=" + cargaHoraria +
-                ", preco=" + preco +
-                '}';
+        return "<tr>"+"<td>"+ id +"</td>" +
+                "<td>"+ nome +"</td>" +
+                "<td>"+ requisito +"</td>" +
+                "<td>"+ ementa +"</td>" +
+                "<td>"+ cargaHoraria +"</td>" +
+                "<td>"+ preco +"</td>" + "</tr>";
     }
 
     public Curso(int id, String nome, String requisito, String ementa, int cargaHoraria, double preco) {

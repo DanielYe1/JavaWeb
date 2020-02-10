@@ -33,21 +33,20 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "id=" + id +
-                ", cpf='" + cpf + '\'' +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", celular='" + celular + '\'' +
-                ", login='" + login + '\'' +
-                ", senha='" + senha + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", cep='" + cep + '\'' +
-                ", comentario='" + comentario + '\'' +
-                ", aprovado=" + aprovado +
-                '}';
+        return "<tr>" + "<td>" + id + "</td>" +
+                "<td>" + cpf + "</td>" +
+                "<td>" + nome + "</td>" +
+                "<td>" + email + "</td>" +
+                "<td>" + celular + "</td>" +
+                "<td>" + login + "</td>" +
+                "<td>" + senha + "</td>" +
+                "<td>" + endereco + "</td>" +
+                "<td>" + cidade + "</td>" +
+                "<td>" + bairro + "</td>" +
+                "<td>" + cep + "</td>" +
+                "<td>" + comentario + "</td>" +
+                "<td>" + aprovado + "</td>" + "</tr>"
+                ;
     }
 
     public int getId() {

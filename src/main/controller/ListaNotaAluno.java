@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/notas")
-public class ListaNotas extends HttpServlet {
+public class ListaNotaAluno extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public ListaNotas() {
+    public ListaNotaAluno() {
         super();
     }
 
