@@ -18,9 +18,9 @@
     </div>
     <br>
     <ul class="list-group">
-        <li class="list-group-item"><a href="../alunos/matricula.jsp">Matricula em curso</a></li>
-        <li class="list-group-item"><a href="../alunos/atualizaAluno.jsp">Alterar dados</a></li>
-        <li class="list-group-item"><a href="comentarios">Verificar notas</a></li>
+        <li class="list-group-item"><a href="../matricula.jsp">Matricula em curso</a></li>
+        <li class="list-group-item"><a href="../atualizaAluno.jsp">Alterar dados</a></li>
+        <li class="list-group-item"><a href="notas">Verificar notas</a></li>
         <li class="list-group-item"><a href="comentarios">Upload foto</a></li>
     </ul>
 </div>
