@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="paginas/menu.jsp"/>
-<jsp:include page="paginas/corpo-home.html"/>
+<jsp:include page="paginas/corpo-comentarios.html"/>
 <jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

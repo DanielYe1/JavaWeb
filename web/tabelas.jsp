@@ -10,17 +10,11 @@
 </head>
 <body>
     <div id="menu"></div>
-    <div id="corpo-professores"></div>
+    <div id="corpo-tabelas"></div>
     <div id="rodape"></div>
 
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script>
-        $(function() {
-            $("#menu").load("paginas/menu.html");
-            $("#corpo-professores").load("paginas/corpo-professores.html");
-            $("#rodape").load("paginas/rodape.html");
-        });
-    </script>
+    <jsp:include page="paginas/menu.jsp"/>
+    <jsp:include page="paginas/corpo-tabelas.html"/>
+    <jsp:include page="paginas/rodape.html"/>
 </body>
 </html>

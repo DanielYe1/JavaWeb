@@ -10,7 +10,7 @@
 <script src="js/bootstrap.js"></script>
 <body>
 
-<jsp:include page="paginas/menu.html" />
+<jsp:include page="paginas/menu.jsp" />
 <c:forEach items="${alunos}" var="aluno">
     <p>${aluno}</p><br/>
 </c:forEach>

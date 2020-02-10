@@ -11,9 +11,7 @@
 <body>
 
 <jsp:include page="paginas/menu.jsp" />
-<c:forEach items="${alunos}" var="aluno">
-    <p>${aluno}</p><br/>
-</c:forEach>
+BEM VINDO ADMIN
 <jsp:include page="paginas/rodape.html" />
 
 </body>

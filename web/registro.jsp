@@ -9,18 +9,10 @@
     <title>Bootstrap</title>
 </head>
 <body>
-<div id="menu"></div>
-<div id="corpo-login"></div>
-<div id="rodape"></div>
 
-<script src="js/jquery-1.12.4.js"></script>
-<script src="js/bootstrap.js"></script>
-<script>
-    $(function(){
-        $("#menu").load("paginas/menu.html");
-        $("#corpo-login").load("paginas/corpo-login.html");
-        $("#rodape").load("paginas/rodape.html");
-    });
-</script>
+<jsp:include page="paginas/menu.jsp"/>
+<jsp:include page="paginas/corpo-registro.html"/>
+<jsp:include page="paginas/rodape.html"/>
+
 </body>
 </html>

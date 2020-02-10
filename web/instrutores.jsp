@@ -7,14 +7,11 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<script src="js/bootstrap.js"></script>
 <body>
 
-<jsp:include page="paginas/menu.html" />
-<c:forEach items="${instrutores}" var="val">
-    <p>${val}</p><br/>
-</c:forEach>
-<jsp:include page="paginas/rodape.html" />
+<jsp:include page="paginas/menu.jsp"/>
+<jsp:include page="paginas/corpo-instrutores.jsp"/>
+<jsp:include page="paginas/rodape.html"/>
 
 </body>
 </html>
