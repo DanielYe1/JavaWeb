@@ -32,8 +32,9 @@ public class ListaValor extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            String selectSQL = "select sum(carga_horaria*valor_hora) as valor from instrutores join turmas t on instrutores.id = t.instrutores_id where instrutores_id = 1;";
+            String selectSQL = "select sum(carga_horaria*valor_hora) as valor from instrutores join turmas t on instrutores.id = t.instrutores_id where instrutores_id = ?;";
             PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
+            preparedStatement.setString(1, (String) request.getSession().getAttribute("id"));
             ResultSet resultado = preparedStatement.executeQuery();
 
             resultado.next();

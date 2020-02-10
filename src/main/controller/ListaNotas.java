@@ -35,8 +35,9 @@ public class ListaNotas extends HttpServlet {
 
             String selectSQL = "select c.nome as curso, t.id as turmas_id, m.nota as nota from alunos " +
                     "join matriculas m on alunos.id = m.alunos_id join turmas t on m.turmas_id = t.id " +
-                    "join cursos c on t.cursos_id = c.id where alunos_id = 1;";
+                    "join cursos c on t.cursos_id = c.id where alunos_id = ?;";
             PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
+            preparedStatement.setString(1, (String) request.getSession().getAttribute("id"));
             ResultSet resultado = preparedStatement.executeQuery();
 
             List<Nota> notas = new ArrayList<>();
