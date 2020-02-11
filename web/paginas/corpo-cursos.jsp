@@ -7,7 +7,7 @@
         <c:forEach items="${cursos}" var="val">
         <div class="col-md-3 col-sm-4">
             <div class="thumbnail">
-                <img class="img-rounded img-responsive center-block" src="images/curso/${val.id}.jpg">
+                <img class="img-rounded img-responsive center-block" src="images/curso/${val.id}.png">
                 <div class="caption">
                     <h3>${val.nome}</h3>
                     <p>Preco:${val.preco}</p>

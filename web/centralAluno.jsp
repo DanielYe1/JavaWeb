@@ -21,7 +21,7 @@
         <li class="list-group-item"><a href="matricula.jsp">Matricula em curso</a></li>
         <li class="list-group-item"><a href="atualizaAluno.jsp">Alterar dados</a></li>
         <li class="list-group-item"><a href="notas">Verificar notas</a></li>
-        <li class="list-group-item"><a href="comentarios">Upload foto</a></li>
+        <li class="list-group-item"><a href="uploadImagemAluno.jsp">Upload foto</a></li>
     </ul>
 </div>
 <jsp:include page="paginas/rodape.html"/>

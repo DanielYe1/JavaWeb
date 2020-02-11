@@ -24,8 +24,7 @@
         <li class="list-group-item"><a href="tabelasAtualiza.jsp">Alterar dados</a></li>
         <li class="list-group-item"><a href="comentarios">Verificar notas alunos</a></li>
         <li class="list-group-item"><a href="comentarios">Verifica valor professores</a></li>
-        <li class="list-group-item"><a href="comentarios">Upload foto instrutor</a></li>
-        <li class="list-group-item"><a href="comentarios">Upload foto curso</a></li>
+        <li class="list-group-item"><a href="uploadImagemAdmin.jsp">Upload fotos</a></li>
     </ul>
 </div>
 <jsp:include page="paginas/rodape.html" />
