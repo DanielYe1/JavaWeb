@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -10,7 +11,7 @@
                 <li><a href="cursos">Cursos</a></li>
                 <li><a href="sobre.jsp">Sobre</a></li>
                 <li><a href="instrutor">Professores</a></li>
-                <li><a href="comentarios">Comentarios</a></li>
+                <li><a href="comentarios">Comentários</a></li>
                 <li><a href="registro.jsp">Registro</a></li>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="central.jsp">Central</a></li>

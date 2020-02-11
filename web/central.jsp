@@ -1,7 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <head>
     <title>$Title$</title>
     <link rel="stylesheet" href="css/bootstrap.css">

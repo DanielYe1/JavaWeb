@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 <div class="container">
     <br>
     <div class="jumbotron">
-        <h2>Faça sua matrícula</h2>
+        <h2>Se não for professor da turma, ocorrerá um erro na página</h2>
     </div>
 
     <form class="form-horizontal" action="atualiza-nota" method="post">
