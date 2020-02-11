@@ -13,10 +13,32 @@
 <jsp:include page="/paginas/menu.jsp"/>
 
 <div class="container">
-    <c:forEach items="${notas}" var="val">
-        <p>${val}</p><br/>
-    </c:forEach>
+
+
+    <h2>Notas</h2>
+    <table class="table table-striped table-bordered" style="width:100%">
+        <thead>
+        <tr>
+            <th>idAluno</th>
+            <th>idTurma</th>
+            <th>Curso</th>
+            <th>Nota</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <c:forEach items="${notas}" var="val">
+            ${val}
+        </c:forEach>
+
+        </tbody>
+    </table>
+
+
 </div>
+
+
+
 
 <jsp:include page="/paginas/rodape.html"/>
 

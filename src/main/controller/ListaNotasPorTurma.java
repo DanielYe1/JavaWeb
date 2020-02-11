@@ -1,6 +1,5 @@
 package main.controller;
 
-import main.model.Curso;
 import main.model.Nota;
 import main.model.repositorio.Conexao;
 
@@ -18,11 +17,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/notas")
-public class ListaNotaAluno extends HttpServlet {
+@WebServlet("/notas-turma")
+public class ListaNotasPorTurma extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public ListaNotaAluno() {
+    public ListaNotasPorTurma() {
         super();
     }
 
@@ -33,18 +32,18 @@ public class ListaNotaAluno extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            String selectSQL = "select c.nome as curso, t.id as turmas_id, m.nota as nota from alunos " +
+            String selectSQL = "select c.nome as curso, t.id as turmas_id, alunos_id as idAluno, m.nota as nota from alunos " +
                     "join matriculas m on alunos.id = m.alunos_id join turmas t on m.turmas_id = t.id " +
-                    "join cursos c on t.cursos_id = c.id where alunos_id = ?;";
+                    "join cursos c on t.cursos_id = c.id where turmas_id = ?;";
             PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-            preparedStatement.setString(1, (String) request.getSession().getAttribute("id"));
+            preparedStatement.setString(1, (String) request.getParameter("idTurma"));
             ResultSet resultado = preparedStatement.executeQuery();
 
             List<Nota> notas = new ArrayList<>();
             while (resultado.next()) {
                 notas.add(new Nota(
                         resultado.getString("curso"),
-                        (Integer)request.getSession().getAttribute("id"),
+                        Integer.parseInt(resultado.getString("idAluno")),
                         Integer.parseInt(resultado.getString("turmas_id")),
                         Integer.parseInt(resultado.getString("nota"))
                 ));

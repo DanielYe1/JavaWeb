@@ -22,7 +22,7 @@
         <li class="list-group-item"><a href="deletarAdmin.jsp">Deletar dados</a></li>
         <li class="list-group-item"><a href="tabelasCadastro.jsp">Cadastrar dados</a></li>
         <li class="list-group-item"><a href="tabelasAtualiza.jsp">Alterar dados</a></li>
-        <li class="list-group-item"><a href="comentarios">Verificar notas alunos</a></li>
+        <li class="list-group-item"><a href="listaNotasPorTurma.jsp">Verificar notas alunos</a></li>
         <li class="list-group-item"><a href="comentarios">Verifica valor professores</a></li>
         <li class="list-group-item"><a href="uploadImagemAdmin.jsp">Upload fotos</a></li>
     </ul>

@@ -1,9 +1,17 @@
 package main.model;
 
 public class Nota {
+    private int idAluno;
     private String curso;
     private int idTurma;
     private int nota;
+
+    public Nota(String curso, int idTurma, int nota, int idAluno) {
+        this.idAluno = idAluno;
+        this.curso = curso;
+        this.idTurma = idTurma;
+        this.nota = nota;
+    }
 
     public String getCurso() {
         return curso;
@@ -31,16 +39,9 @@ public class Nota {
 
     @Override
     public String toString() {
-        return "Nota{" +
-                "curso='" + curso + '\'' +
-                ", idTurma=" + idTurma +
-                ", nota=" + nota +
-                '}';
-    }
-
-    public Nota(String curso, int idTurma, int nota) {
-        this.curso = curso;
-        this.idTurma = idTurma;
-        this.nota = nota;
+        return "<tr>"+"<td>"+ idAluno +"</td>" +
+                "<td>"+ idTurma +"</td>" +
+                "<td>"+ curso +"</td>" +
+                "<td>"+ nota +"</td>" + "</tr>";
     }
 }
