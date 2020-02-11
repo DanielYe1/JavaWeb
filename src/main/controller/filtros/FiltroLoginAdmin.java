@@ -11,7 +11,8 @@ import java.security.NoSuchAlgorithmException;
 
 @WebFilter(filterName = "FiltroLoginAdmin", urlPatterns = {"/centralAdmin.jsp", "/admin", "/deletarAdmin.jsp",
         "/tabelasCadastro.jsp", "/tabelasAtualiza.jsp", "/listaNotasPorTurma.jsp", "/valor-admin",
-        "/uploadImagemAdmin.jsp", "/deleta-aluno", "/deleta-curso", "/deleta-instrutor", "/deleta-matricula", "/deleta-turma"})
+        "/uploadImagemAdmin.jsp", "/deleta-aluno", "/deleta-curso", "/deleta-instrutor", "/deleta-matricula",
+        "/deleta-turma", "/transforma-aluno"})
 public class FiltroLoginAdmin implements Filter {
     public void destroy() {
     }
