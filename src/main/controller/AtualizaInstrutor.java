@@ -40,7 +40,7 @@ public class AtualizaInstrutor extends HttpServlet {
             stmt.setString(2, request.getParameter("email"));
             stmt.setInt(3, Integer.parseInt(request.getParameter("valor_hora")));
             stmt.setString(4, request.getParameter("login"));
-            stmt.setString(5, request.getParameter("senha"));
+            stmt.setString(5, (String) request.getAttribute("senha"));
             stmt.setString(6, request.getParameter("experiencia"));
             if (request.getParameter("id") == null) {
                 stmt.setString(7, (String) request.getSession().getAttribute("id"));

@@ -42,7 +42,7 @@ public class AtualizaAluno extends HttpServlet {
             stmt.setString(3, request.getParameter("email"));
             stmt.setString(4, request.getParameter("celular"));
             stmt.setString(5, request.getParameter("login"));
-            stmt.setString(6, request.getParameter("senha"));
+            stmt.setString(6, (String) request.getAttribute("senha"));
             stmt.setString(7, request.getParameter("endereco"));
             stmt.setString(8, request.getParameter("cidade"));
             stmt.setString(9, request.getParameter("bairro"));

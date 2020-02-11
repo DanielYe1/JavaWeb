@@ -13,11 +13,11 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-@WebServlet("/cadastro-instrutor")
-public class CadastroInstrutor extends HttpServlet {
+@WebServlet("/cadastro-admin")
+public class CadastroAdmin extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public CadastroInstrutor() {
+    public CadastroAdmin() {
         super();
     }
 
@@ -34,17 +34,14 @@ public class CadastroInstrutor extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            PreparedStatement stmt = conexao.prepareStatement("insert into instrutores(nome, email, valor_hora, login, senha, experiencia) values(?,?,?,?,?,?)");
+            PreparedStatement stmt = conexao.prepareStatement("insert into administrador(nome, login, senha,) values(?,?,?)");
             stmt.setString(1, request.getParameter("nome"));
-            stmt.setString(2, request.getParameter("email"));
-            stmt.setInt(3, Integer.parseInt(request.getParameter("valor_hora")));
-            stmt.setString(4, request.getParameter("login"));
-            stmt.setString(5, (String) request.getAttribute("senha"));
-            stmt.setString(6, request.getParameter("experiencia"));
+            stmt.setString(2, request.getParameter("login"));
+            stmt.setString(3, (String) request.getAttribute("senha"));
 
             stmt.executeUpdate();
 
-            request.setAttribute("message", "O instrutor foi cadastrado com sucesso.");
+            request.setAttribute("message", "O administrador foi cadastrado com sucesso.");
             RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
             dispatcher.forward(request, response);
         } catch (Exception e) {

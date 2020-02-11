@@ -40,13 +40,18 @@ public class CadastroAluno extends HttpServlet {
             stmt.setString(3, request.getParameter("email"));
             stmt.setString(4, request.getParameter("celular"));
             stmt.setString(5, request.getParameter("login"));
-            stmt.setString(6, request.getParameter("senha"));
+            stmt.setString(6, (String) request.getAttribute("senha"));
             stmt.setString(7, request.getParameter("endereco"));
             stmt.setString(8, request.getParameter("cidade"));
             stmt.setString(9, request.getParameter("bairro"));
             stmt.setString(10, request.getParameter("cep"));
             stmt.setString(11, request.getParameter("comentario"));
-            stmt.setString(12, request.getParameter("aprovado"));
+            String aprovado = request.getParameter("aprovado");
+            if(aprovado == null) {
+                stmt.setString(12, "n");
+            }else{
+                stmt.setString(12, aprovado);
+            }
 
             stmt.executeUpdate();
 

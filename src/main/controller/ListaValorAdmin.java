@@ -1,7 +1,5 @@
 package main.controller;
 
-import main.model.Curso;
-import main.model.Nota;
 import main.model.repositorio.Conexao;
 
 import javax.servlet.RequestDispatcher;
@@ -16,13 +14,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-@WebServlet("/notas")
-public class ListaNotaAluno extends HttpServlet {
+@WebServlet("/valor-admin")
+public class ListaValorAdmin extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public ListaNotaAluno() {
+    public ListaValorAdmin() {
         super();
     }
 
@@ -33,25 +33,22 @@ public class ListaNotaAluno extends HttpServlet {
 
             Connection conexao = Conexao.getConexao();
 
-            String selectSQL = "select c.nome as curso, t.id as turmas_id, m.nota as nota from alunos " +
-                    "join matriculas m on alunos.id = m.alunos_id join turmas t on m.turmas_id = t.id " +
-                    "join cursos c on t.cursos_id = c.id where alunos_id = ?;";
+            String selectSQL = "select instrutores_id as idInstrutor, count(*) as qtTurmas, sum(carga_horaria*valor_hora)" +
+                    " as valor from instrutores join turmas t on instrutores.id = t.instrutores_id group by instrutores_id;";
             PreparedStatement preparedStatement = conexao.prepareStatement(selectSQL);
-            preparedStatement.setString(1, (String) request.getSession().getAttribute("id"));
             ResultSet resultado = preparedStatement.executeQuery();
 
-            List<Nota> notas = new ArrayList<>();
+            List<Integer[]> valores = new ArrayList<>();
             while (resultado.next()) {
-                notas.add(new Nota(
-                        resultado.getString("curso"),
-                        Integer.parseInt((String) request.getSession().getAttribute("id")),
-                        Integer.parseInt(resultado.getString("turmas_id")),
-                        Integer.parseInt(resultado.getString("nota"))
-                ));
+                Integer[] val = new Integer[3];
+                val[0] = Integer.parseInt(resultado.getString("IdInstrutor"));
+                val[1] = Integer.parseInt(resultado.getString("qtTurmas"));
+                val[2] = Integer.parseInt(resultado.getString("valor"));
+                valores.add(val);
             }
+            request.setAttribute("valores", valores);
 
-            request.setAttribute("notas", notas);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/notas.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("valores.jsp");
 
             dispatcher.forward(request, response);
         } catch (Exception e) {

@@ -27,7 +27,7 @@ public class Login extends HttpServlet {
 
         try {
             String user = request.getParameter("login");
-            String[] role = Conexao.autenticaUsuario(user, request.getParameter("senha"));
+            String[] role = Conexao.autenticaUsuario(user, (String) request.getAttribute("senha"));
             PrintWriter out = response.getWriter();
             if (role == null) {
                 out.println("Dados errados");

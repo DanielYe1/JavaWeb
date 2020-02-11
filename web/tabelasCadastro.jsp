@@ -11,11 +11,6 @@
 </head>
 <body>
 
-<% //In case, if Editor session is not set, redirect to Login page
-    if ((request.getSession(false).getAttribute("admin") == null)) {
-%>
-<jsp:forward page="semacesso.jsp"></jsp:forward>
-<%} %>
 <jsp:include page="paginas/menu.jsp"/>
 <br>
 <div class="container">

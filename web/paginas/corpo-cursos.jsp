@@ -11,6 +11,7 @@
                 <img class="img-rounded img-responsive center-block" src="images/curso/${val.id}.png">
                 <div class="caption">
                     <h3>${val.nome}</h3>
+                    <p>ID:${val.id}</p>
                     <p>Preco:${val.preco}</p>
                     <p>Ementa:${val.ementa}</p>
                     <p>Carga horaria:${val.cargaHoraria}</p>

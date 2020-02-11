@@ -18,12 +18,13 @@
     </div>
     <br>
     <ul class="list-group">
+        <li class="list-group-item"><a href="transforma-aluno">Aceitar Alunos</a></li>
         <li class="list-group-item"><a href="admin">Listar dados</a></li>
         <li class="list-group-item"><a href="deletarAdmin.jsp">Deletar dados</a></li>
         <li class="list-group-item"><a href="tabelasCadastro.jsp">Cadastrar dados</a></li>
         <li class="list-group-item"><a href="tabelasAtualiza.jsp">Alterar dados</a></li>
         <li class="list-group-item"><a href="listaNotasPorTurma.jsp">Verificar notas alunos</a></li>
-        <li class="list-group-item"><a href="comentarios">Verifica valor professores</a></li>
+        <li class="list-group-item"><a href="valor-admin">Verifica valor professores</a></li>
         <li class="list-group-item"><a href="uploadImagemAdmin.jsp">Upload fotos</a></li>
     </ul>
 </div>

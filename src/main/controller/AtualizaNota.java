@@ -47,6 +47,11 @@ public class AtualizaNota extends HttpServlet {
                 turmas.add(resultado.getInt("id"));
             }
 
+            if(!turmas.contains(Integer.parseInt(request.getParameter("turmas_id")))) {
+                request.setAttribute("message", "Somente professores da turma podem atualizar nota da turma");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+                dispatcher.forward(request, response);
+            }
 
 
             stmt = conexao.prepareStatement("update matriculas set " +
