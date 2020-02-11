@@ -13,7 +13,7 @@
         <c:forEach items="${instrutores}" var="instrutor">
         <div class="col-md-4 col-sm-6">
             <div class="thumbnail">
-                <img class="img-rounded img-responsive center-block" src="images/ANDERSON_GALEOTE.jpg">
+                <img class="img-rounded img-responsive center-block" src="images/instrutor/${instrutor.id}.png">
                 <div class="caption">
                     <h3>${instrutor.nome}</h3>
                     <p>${instrutor.experiencia}</p>

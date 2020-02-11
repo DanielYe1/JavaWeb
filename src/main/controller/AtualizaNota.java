@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet("/atualiza-nota")
-public class AtualizaMatricula extends HttpServlet {
+public class AtualizaNota extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public AtualizaMatricula() {
+    public AtualizaNota() {
         super();
     }
 
