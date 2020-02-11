@@ -20,24 +20,6 @@
         <p>A maior seleção de cursos do mundo.
             Escolha entre mais de 100.000 cursos em vídeo online com novas adições publicadas mensalmente</p>
     </div>
-
-    <form class="form-horizontal" action="/upload-curso" method="post" enctype="multipart/form-data">
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label required">arquivo</label>
-            <div class="col-sm-8">
-                <input class="form-control" type="file" name="fname" required>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-8 col-sm-offset-2">
-                <button type="submit" class="btn btn-primary"><span
-                        class="glyphicon glyphicon-save"></span>Enviar
-                </button>
-            </div>
-        </div>
-    </form>
 </div>
 <jsp:include page="paginas/rodape.html"/>
 </body>
