@@ -15,6 +15,11 @@
                 <li><a href="registro.jsp">Registro</a></li>
                 <li><a href="login.jsp">Login</a></li>
                 <li><a href="central.jsp">Central</a></li>
+                <%
+                    if((request.getSession().getAttribute("id") != null)) {
+                        out.println("<li><a href=\"logout\">Logout</a></li>");
+                    }
+                %>
             </ul>
         </div>
     </div>
